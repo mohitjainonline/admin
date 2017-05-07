@@ -16,6 +16,7 @@
   "author": "Vladimir Ponomarev",
   "license": "MIT",
   "dependencies": {
+    "babelify": "^7.3.0",
     "bcrypt": "^1.0.1",
     "body-parser": "^1.15.2",
     "cross-domain-storage": "^1.0.2",

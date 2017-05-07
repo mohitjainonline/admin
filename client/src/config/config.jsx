@@ -7,18 +7,18 @@ config = {
 			},
 		qa: {
 			protocol : 'https',
-			rootApi : 'glacial-inlet-83305.herokuapp.com/api',
-			rootApp : 'localhost:8080'
+			rootApi : 'schmgm-nodeservices.herokuapp.com/api',
+			rootApp : 'https://sch-login.herokuapp.com'
 			},
 		uat: {
 			protocol : 'https',
-			rootApi : 'glacial-inlet-83305.herokuapp.com/api',
-			rootApp : 'localhost:8080'
+			rootApi : 'schmgm-nodeservices.herokuapp.com/api',
+			rootApp : 'https://sch-login.herokuapp.com'
 			},
 		live: {
 				protocol: 'https',
-				rootApi: 'glacial-inlet-83305.herokuapp.com/api',
-				rootApp : 'localhost:8080'
+				rootApi: 'schmgm-nodeservices.herokuapp.com/api',
+				rootApp : 'https://sch-login.herokuapp.com'
 			}
 	};
 

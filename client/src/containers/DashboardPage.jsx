@@ -21,20 +21,7 @@ class DashboardPage extends React.Component {
    * This method will be executed after initial rendering.
    */
   componentDidMount() {
-    var _this = this;
-    UserService.memberinfo().done(function(data){
-      if(data.success == true)
-      {
-        _this.setState({
-          secretData: data.msg,
-          user : data.user
-        });
-      }
-      else
-      {
-
-      }
-    })
+    
 
   }
 
@@ -42,7 +29,7 @@ class DashboardPage extends React.Component {
    * Render the component.
    */
   render() {
-    return (<Dashboard secretData={this.state.secretData} user = {this.state.user}/>);
+      return (<Dashboard />);    
   }
 
 }
