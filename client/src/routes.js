@@ -11,73 +11,51 @@ import LoginService from '../service/LoginServices.jsx';
 import Config from './config/config.jsx';
 
 const routes = {
-  // base component (wrapper for the whole application).
-  component: Base,
-  childRoutes: [
+    // base component (wrapper for the whole application).
+    component: Base,
+    childRoutes: [
 
-    {
-      path: '/',
-      getComponent: (location, callback) => {
+        {
+            path: '/',
+            getComponent: (location, callback) => {
 
-debugger;
+                if (Auth.isUserAuthenticated()) {
+                    callback(null, DashboardPage);
 
-        // var _id = Utility.getParameterByName("id")
-        // if(_id != null)
-        // {          
-        //   var data = {
-        //     _id : _id
-        //   }
-        //   LoginService.setUp(data).done(function(data){
-        //     if(data.success == true)
-        //       {
-        //         Auth.authenticateUser(data);
-        //         // change the current URL to /
-        //         //_this.context.router.replace('/');
-        //         window.location.href = "/"
+                } else {
+                    //callback(null, HomePage);
+                    window.location.href = Config.getParameter("rootApp")
+                }
+            }
+        },
 
-        //       }
-        //       else
-        //       {
+        {
+            path: '/login',
+            component: LoginPage
+        },
+        {
+            name: "profile",
+            path: '/profile',
+            component: ProfilePage
+        },
+        {
+            path: '/signup',
+            component: SignUpPage
+        },
 
-        //       }
-        //   })
-        // }
+        {
+            name: "logout",
+            path: '/logout',
+            onEnter: (nextState, replace) => {
+                Auth.deauthenticateUser();
 
-        if (Auth.isUserAuthenticated()) {
-          callback(null, DashboardPage);
-          
-        } else {
-          //callback(null, HomePage);
-          window.location.href = Config.getParameter("rootApp")
+                // change the current URL to /
+                //replace('/');
+                window.location.href = Config.getParameter("rootApp");
+            }
         }
-      }
-    },
 
-    {
-      path: '/login',
-      component: LoginPage
-    },
-    {
-      path: '/profile',
-      component: ProfilePage
-    },
-    {
-      path: '/signup',
-      component: SignUpPage
-    },
-
-    {
-      path: '/logout',
-      onEnter: (nextState, replace) => {
-        Auth.deauthenticateUser();
-
-        // change the current URL to /
-        //replace('/');
-        location.href(Config.getParameter("rootApp"))
-      }
-    }
-
-  ]
+    ]
 };
 
 export default routes;

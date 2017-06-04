@@ -3,7 +3,7 @@ config = {
 		local: {
 			protocol : 'http',
 			rootApi : 'localhost:8085/api',
-			rootApp : 'localhost:8080'
+			rootApp : 'http://localhost:8080'
 			},
 		qa: {
 			protocol : 'https',

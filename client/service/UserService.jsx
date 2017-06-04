@@ -12,8 +12,8 @@
     authenticate : function(data) {  
         return  Utility.postService(authenticateUrl,data);
       },
-    memberinfo : function() {  
-        return  Utility.getService(memberinfoUrl);
+    memberinfo : function(data) {  
+        return  Utility.getService(memberinfoUrl,data);
       }
  }
  

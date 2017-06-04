@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 
-const AppLeftPanel = ({ user }) => (
+const AppLeftPanel = ({ user,image }) => (
             <div className="page-sidebar sidebar">
                 <div className="page-sidebar-inner slimscroll">
                     <div className="sidebar-header">
                         <div className="sidebar-profile">
                             <a href="javascript:void(0);" id="profile-menu-link">
                                 <div className="sidebar-profile-image">
-                                    <img src="assets/images/avatar1.png" className="img-circle img-responsive" alt="" />
+                                    <img src={image.data ? image.data : "assets/images/humandummy.png"} className="img-circle img-responsive uploadimg" alt="" />
                                 </div>
                                 <div className="sidebar-profile-details">
                                     <span>{user.params.name}<br /><small>{user.role}</small></span>
